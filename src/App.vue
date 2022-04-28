@@ -3,6 +3,7 @@
     <div class="wrapper" v-if="isLoaded" id="app">
       <LandingPage :user="user" />
       <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
+      <Academic :content="findSlug('academic')" />
       <Experience :content="findSlug('experiences')" />
       <Skills :content="findSlug('skills')" />
       <Projects :content="findSlug('projects')" />
@@ -14,6 +15,7 @@
 <script>
 import LandingPage from "./components/LandingPage.vue";
 import Description from "./components/Description.vue";
+import Academic from "./components/Academic.vue";
 import Experience from "./components/Experience.vue";
 import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
@@ -26,6 +28,7 @@ export default {
   components: {
     LandingPage,
     Description,
+    Academic,
     Experience,
     Skills,
     Projects,
@@ -53,7 +56,7 @@ export default {
     fetchObjectTypes() {
       return bucket.getObjectTypes();
     },
-    findSlug(slug) {
+    findSlug(slug) {  // use slug to fetch data
       return this.posts.find((item) => {
         return item.slug === slug;
       });
@@ -67,7 +70,7 @@ export default {
   },
   created() {
     document.body.classList.add("loading");
-    Promise.all([this.fetchPosts(), this.fetchUser()]).then(([posts, user_data]) => {
+    Promise.all([this.fetchPosts(), this.fetchUser()]).then(([posts, user_data]) => {  // posts is all in this object type and user_data specify the object
       user_data = this.extractFirstObject(user_data);
       this.posts = posts.objects;
       this.user = {

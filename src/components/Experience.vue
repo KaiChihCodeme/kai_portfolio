@@ -8,22 +8,10 @@
       />
     </AnimateOnVisible>
 
-	<AnimateOnVisible name="fadeUp" :duration="1">
-		<div class="container-fluid">
-			<div class="row">
-				<ExperienceColumn
-					:posts="content.metadata.academic"
-					title="Education"
-					class="col-12 col-md left"
-				/>
-				<ExperienceColumn
-					:posts="content.metadata.professional"
-					title="Professional"
-					class="col-12 col-md right"
-				/>
-			</div>
-		</div>
-	</AnimateOnVisible>
+    <ExperienceColumn
+      class="content"
+      :posts="content.metadata.professional"
+    />
   </section>
 </template>
 
@@ -36,7 +24,7 @@ export default {
   props: ["content"],
   components: {
     Title,
-    ExperienceColumn
+    ExperienceColumn,
   }
 };
 </script>
@@ -57,6 +45,16 @@ $linear: map-get($colors, dark);
 .row {
   padding-top: 20px;
   text-align: center;
+}
+
+.content {
+  text-align: left;
+  // margin-left: 20%;
+  // margin-bottom: 10px;
+}
+
+.logo {
+  text-align: right;
 }
 
 @media (min-width: #{map-get($breakpoints, small)}) {
