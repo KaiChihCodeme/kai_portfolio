@@ -2,11 +2,11 @@
   <header class="header parallax">
     <div class="name">
       <div class="wrapper-name">
-        <AnimateOnVisible name="fadeDown" ::duration="1">
+        <AnimateOnVisible name="fadeDown" ::duration="5">
           <h1>{{ user.name }}</h1>
         </AnimateOnVisible>
         <hr />
-        <AnimateOnVisible name="fadeUp" ::duration="1">
+        <AnimateOnVisible name="fadeUp" ::duration="5">
           <p>{{ user.status }}</p>
         </AnimateOnVisible>
       </div>
@@ -88,7 +88,7 @@ export default {
 @media (min-width: #{map-get($breakpoints, medium)}) {
   .name {
     .wrapper-name {
-      width: 450px;
+      width: 540px;
     }
     h1 {
       font-size: 4rem;

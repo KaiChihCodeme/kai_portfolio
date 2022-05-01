@@ -21,26 +21,43 @@
         :category="post.tag"
         icon="code"
       />
+      <!-- <div>hello {{index}}</div> -->
 		</AnimateOnVisible>
       </article>
     </div>
+
+    <!-- <div class="photos">
+      <VueSlickCarousel :arrows="true" :dots="true" :centerMode="true" :edgeFriction=0.35 :fade="true" :infinite="true" :autoplay="true" :autoplaySpeed=3000>
+        <img :src="getImgUrl('Google.png')" alt="photo"/>
+        <img :src="getImgUrl('UOT.png')" alt="photo"/>
+        <img :src="getImgUrl('Softmobile.png')" alt="photo"/>
+        <img :src="getImgUrl('logo.png')" alt="photo"/>
+      </VueSlickCarousel>
+    </div> -->
+
+
   </section>
 </template>
 
 <script>
 import Title from "./Title.vue";
+// import VueSlickCarousel from 'vue-slick-carousel';
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
   name: "Projects",
   props: ['content'],
   components: {
-    Title
+    Title,
+    // VueSlickCarousel,
   },
   methods: {
     getImgUrl(img) {
       if(img == undefined || img == "")
         return ""
       return require('../assets/img/projects/'+img)
+      // return require('../assets/img/'+img)
     },
   },
 };
@@ -93,5 +110,21 @@ article .inner {
 h1 {
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+img {
+    width: 250px;
+    height: 320px;
+    border-radius: 40%;
+    display: inline-block;
+}
+
+.photos {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  display: block;
+  background-color: white;
 }
 </style>
