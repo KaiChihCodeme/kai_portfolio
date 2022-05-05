@@ -21,6 +21,7 @@
         :category="post.tag"
         icon="code"
       />
+      <div v-if="index==6"><h3>Sporden AWS architecture</h3><img class="projects-photo" :src="getImgUrl('sporden_aws.png')" alt="photo"></div>
       <!-- <div>hello {{index}}</div> -->
 		</AnimateOnVisible>
       </article>
@@ -126,5 +127,15 @@ img {
   width: 20%;
   display: block;
   background-color: white;
+}
+
+.projects-photo {
+  width: 1300px;
+  height: auto;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0%;
 }
 </style>
