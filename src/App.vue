@@ -7,6 +7,7 @@
       <Experience :content="findSlug('experiences')" />
       <Skills :content="findSlug('skills')" />
       <Projects :content="findSlug('projects')" />
+      <Certificates :content="findSlug('certificates')" />
       <Footer :user="user" :links="findSlug('links')" />
     </div>
   </transition>
@@ -20,6 +21,7 @@ import Experience from "./components/Experience.vue";
 import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
 import Footer from "./components/Footer.vue";
+import Certificates from "./components/Certificates.vue";
 
 import { bucket } from "./cosmic.js";
 
@@ -32,6 +34,7 @@ export default {
     Experience,
     Skills,
     Projects,
+    Certificates,
     Footer,
   },
   data: () => ({

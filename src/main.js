@@ -2,7 +2,7 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue'
 
-import AnimateOnVisible from "./components/AnimateOnVisible.vue"
+import AnimateOnVisible from "./components/AnimateOnVisible.vue";
 
 Vue.use(BootstrapVue)
 
